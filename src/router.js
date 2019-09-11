@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import ArticleList from './views/ArticleList.vue'
 
 Vue.use(Router)
 
@@ -10,8 +11,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          path: '/',
+          name: 'list',
+          component: ArticleList
+        },
+        {
+          path: '/details/:id',
+          name: 'details',
+          component: () => import('./views/Details.vue')
+        }
+      ]
     },
     {
       path: '/about',
