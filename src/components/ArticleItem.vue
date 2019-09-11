@@ -2,10 +2,22 @@
   <div class="article-main">
     <h2 class="title" @click="$emit('toDetail', id)">{{title}}</h2>
     <div class="info">
-      <span class="author"><i class="el-icon-user"></i>{{author}}</span>
-      <span class="pubtime"><i class="el-icon-date"></i>{{pubtime}}</span>
-      <span class="tag"><i class="el-icon-edit"></i>{{tag}}</span>
-      <span class="view-count"><i class="el-icon-view"></i>{{viewCount}}</span>
+      <span class="author">
+        <i class="el-icon-user"></i>
+        {{author}}
+      </span>
+      <span class="pubtime">
+        <i class="el-icon-date"></i>
+        {{pubtime}}
+      </span>
+      <span class="tag">
+        <i class="el-icon-edit"></i>
+        {{tag}}
+      </span>
+      <span class="view-count">
+        <i class="el-icon-view"></i>
+        {{viewCount}}
+      </span>
     </div>
     <p class="desc">{{desc}}</p>
     <div class="more">
@@ -46,29 +58,20 @@ export default {
   .title {
     font-size: 18px;
     color: #0a95f1;
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }
   .info {
-    .author {
-      color: #626464;
-      margin-right: 20px;
-    }
-    .pubtime {
-      color: #626464;
-      margin-right: 20px;
-    }
-    .tag {
-      color: #626464;
-      margin-right: 20px;
-    }
+    .author,
+    .pubtime,
+    .tag,
     .view-count {
       color: #626464;
       margin-right: 20px;
-    }
-    & i{
-      margin-right: 8px;
+      & i {
+        margin-right: 8px;
+      }
     }
   }
   .desc {
